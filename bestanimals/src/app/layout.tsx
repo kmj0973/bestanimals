@@ -1,6 +1,12 @@
 import Header from "./_common/Header";
 import type { Metadata } from "next";
+import { Noto_Sans_KR } from "next/font/google";
 import "@/styles/globals.css";
+
+const noto = Noto_Sans_KR({
+  //google font
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Best Animals",
@@ -14,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={noto.className}>
         <Header />
         {children}
       </body>
