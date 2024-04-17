@@ -5,12 +5,12 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   background-color: #fff3e3;
-  width: 100%;
-  height: 80px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  min-width: 730px;
+  height: 80px;
 `;
 
 export const LogoImage = styled(Image)`
@@ -20,18 +20,16 @@ export const LogoImage = styled(Image)`
   margin-left: 5%;
 `;
 
-export const CategoryContainer = styled.div`
-  width: 50%;
-  margin-right: 10%;
-`;
-
-export const CategoryWrap = styled.ul`
+export const MenuContainer = styled.ul`
   display: flex;
-  justify-content: space-around;
+  width: 55%;
+  min-width: 500px;
+  margin-right: 5%;
+  padding-left: 0;
   list-style: none;
 `;
 
-export const Category = styled.li<{ color: string }>`
+export const Menu = styled.li<{ color: string }>`
   a {
     position: relative;
     color: ${(props) => props.color};
@@ -40,13 +38,13 @@ export const Category = styled.li<{ color: string }>`
     z-index: 1;
   }
   position: relative;
-  padding: 0 10px;
+  padding: 0 20px;
 `;
 
 export const NavAccentImage = styled(Image)`
   position: absolute;
   top: -5px;
-  right: 1px;
+  right: 10px;
   width: 20px;
   height: 18px;
 `;

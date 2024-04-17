@@ -2,6 +2,7 @@ import Header from "./_common/Header";
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import "@/styles/globals.css";
+import Footer from "./_common/Footer";
 
 const noto = Noto_Sans_KR({
   //google font
@@ -20,9 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head></head>
       <body className={noto.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

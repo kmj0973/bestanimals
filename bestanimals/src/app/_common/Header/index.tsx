@@ -20,25 +20,23 @@ const Header = () => {
     <header>
       <S.HeaderContainer>
         <S.LogoImage src={header_logo} alt="logo" />
-        <S.CategoryContainer>
-          <S.CategoryWrap>
-            {ROUTES.map((route) => {
-              const { href, title } = route;
-              return (
-                <S.Category
-                  key={title}
-                  onClick={handleClick}
-                  color={href == pathName ? "#724000" : "#D3D3D3"}
-                >
-                  {href == pathName ? (
-                    <S.NavAccentImage src={header_nav_accent} alt="aceent" />
-                  ) : null}
-                  <Link href={href}>{title}</Link>
-                </S.Category>
-              );
-            })}
-          </S.CategoryWrap>
-        </S.CategoryContainer>
+        <S.MenuContainer>
+          {ROUTES.map((route) => {
+            const { href, title } = route;
+            return (
+              <S.Menu
+                key={title}
+                onClick={handleClick}
+                color={href == pathName ? "#724000" : "#D3D3D3"}
+              >
+                {href == pathName ? (
+                  <S.NavAccentImage src={header_nav_accent} alt="aceent" />
+                ) : null}
+                <Link href={href}>{title}</Link>
+              </S.Menu>
+            );
+          })}
+        </S.MenuContainer>
       </S.HeaderContainer>
     </header>
   );
