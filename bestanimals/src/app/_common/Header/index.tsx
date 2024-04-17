@@ -19,7 +19,9 @@ const Header = () => {
   return (
     <header>
       <S.HeaderContainer>
-        <S.LogoImage src={header_logo} alt="logo" />
+        <S.LogoImageContainer href="/">
+          <S.LogoImage src={header_logo} alt="logo" />
+        </S.LogoImageContainer>
         <S.MenuContainer>
           {ROUTES.map((route) => {
             const { href, title } = route;
@@ -37,6 +39,9 @@ const Header = () => {
             );
           })}
         </S.MenuContainer>
+        <S.UserLoginContainer>
+          <S.UserLogin>로그인</S.UserLogin>
+        </S.UserLoginContainer>
       </S.HeaderContainer>
     </header>
   );

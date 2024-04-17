@@ -1,9 +1,11 @@
+import * as S from "./index.styles";
+
 const Home = () => {
   return (
     <main>
-      <div>hi</div>
-      <div className="AdoptList">adoptList</div>
-      <div className="SimpleBanner">hi</div>
+      <S.MainBannerCotainer>main banner</S.MainBannerCotainer>
+      <S.AdoptListContainer>adoptList</S.AdoptListContainer>
+      <S.SimpleBannerContainer>simple banner</S.SimpleBannerContainer>
     </main>
   );
 };

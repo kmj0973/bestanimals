@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
@@ -9,22 +10,27 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  min-width: 730px;
+  min-width: 1040px;
   height: 80px;
 `;
 
-export const LogoImage = styled(Image)`
+export const LogoImageContainer = styled(Link)`
   width: 35%;
   height: 100%;
-  object-fit: contain;
   margin-left: 5%;
+`;
+
+export const LogoImage = styled(Image)`
+  height: 100%;
+  object-fit: contain;
 `;
 
 export const MenuContainer = styled.ul`
   display: flex;
-  width: 55%;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
   min-width: 500px;
-  margin-right: 5%;
   padding-left: 0;
   list-style: none;
 `;
@@ -47,4 +53,14 @@ export const NavAccentImage = styled(Image)`
   right: 10px;
   width: 20px;
   height: 18px;
+`;
+
+export const UserLoginContainer = styled.div`
+  width: 25%;
+  min-width: 100px;
+  margin-right: 5%;
+`;
+
+export const UserLogin = styled.div`
+  text-align: center;
 `;
