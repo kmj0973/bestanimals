@@ -19,29 +19,31 @@ const Header = () => {
   return (
     <header>
       <S.HeaderContainer>
-        <S.LogoImageContainer href="/">
-          <S.LogoImage src={header_logo} alt="logo" />
-        </S.LogoImageContainer>
-        <S.MenuContainer>
-          {ROUTES.map((route) => {
-            const { href, title } = route;
-            return (
-              <S.Menu
-                key={title}
-                onClick={handleClick}
-                color={href == pathName ? "#724000" : "#D3D3D3"}
-              >
-                {href == pathName ? (
-                  <S.NavAccentImage src={header_nav_accent} alt="aceent" />
-                ) : null}
-                <Link href={href}>{title}</Link>
-              </S.Menu>
-            );
-          })}
-        </S.MenuContainer>
-        <S.UserLoginContainer>
-          <S.UserLogin>로그인</S.UserLogin>
-        </S.UserLoginContainer>
+        <S.HeaderWrap>
+          <S.LogoImageContainer href="/">
+            <S.LogoImage src={header_logo} alt="logo" />
+          </S.LogoImageContainer>
+          <S.MenuContainer>
+            {ROUTES.map((route) => {
+              const { href, title } = route;
+              return (
+                <S.Menu
+                  key={title}
+                  onClick={handleClick}
+                  color={href == pathName ? "#724000" : "#D3D3D3"}
+                >
+                  {href == pathName ? (
+                    <S.NavAccentImage src={header_nav_accent} alt="aceent" />
+                  ) : null}
+                  <Link href={href}>{title}</Link>
+                </S.Menu>
+              );
+            })}
+          </S.MenuContainer>
+          <S.UserLoginContainer>
+            <S.UserLogin>로그인</S.UserLogin>
+          </S.UserLoginContainer>
+        </S.HeaderWrap>
       </S.HeaderContainer>
     </header>
   );

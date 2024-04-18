@@ -6,18 +6,22 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   background-color: #fff3e3;
+  width: 100%;
+  height: 80px;
+`;
+
+export const HeaderWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  min-width: 1040px;
-  height: 80px;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
 `;
 
 export const LogoImageContainer = styled(Link)`
   width: 35%;
   height: 100%;
-  margin-left: 5%;
 `;
 
 export const LogoImage = styled(Image)`
@@ -58,7 +62,6 @@ export const NavAccentImage = styled(Image)`
 export const UserLoginContainer = styled.div`
   width: 25%;
   min-width: 100px;
-  margin-right: 5%;
 `;
 
 export const UserLogin = styled.div`
