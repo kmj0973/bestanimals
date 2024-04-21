@@ -32,7 +32,7 @@ export const SimpleBannerContainer = styled.article`
   width: 100%;
   height: 1500px;
   max-width: 1440px;
-  background-color: greenyellow;
+  background-color: #fffcc6;
   margin: 0 auto;
 `;
 
