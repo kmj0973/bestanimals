@@ -1,6 +1,7 @@
 import * as S from "./index.styles";
 import main_banner from "../../../public/images/home/main_banner.jpg";
 import AdoptList from "./AdoptList";
+import SimpleBanner from "./SimpleBanner";
 
 const Home = () => {
   return (
@@ -10,11 +11,7 @@ const Home = () => {
         <S.MainBannerImage src={main_banner} alt="banner_image" />
       </S.MainBannerCotainer>
       <AdoptList />
-      <S.SimpleBannerContainer>
-        <S.FirstSimpleBanner></S.FirstSimpleBanner>
-        <S.SecondSimpleBanner></S.SecondSimpleBanner>
-        <S.ThirdSimpleBanner></S.ThirdSimpleBanner>
-      </S.SimpleBannerContainer>
+      <SimpleBanner />
     </main>
   );
 };

@@ -1,6 +1,5 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import main_banner from "../../../public/images/home/main_banner.jpg";
 import * as S from "./AdoptList.styles";
 import SlickButtonFix from "./SlickButtonFix";
 
@@ -77,14 +76,13 @@ const AdoptList = async () => {
     []
   );
 
-  console.log(resultInfoData);
   return (
     <S.AdoptListContainer>
       <S.CustomSlider {...sliderSettings}>
         {resultInfoData.map((info: resultProps, i: number) => {
           return (
             <S.AdoptListWrapper key={i}>
-              <S.AdoptLi colors={info.SEXDSTN == "M" ? "#55bffb" : "#ffa9a9"}>
+              <S.AdoptLi color={info.SEXDSTN == "M" ? "#55bffb" : "#ffa9a9"}>
                 {duplicatePhotoData.map((photo: resultProps) => {
                   if (photo.ANIMAL_NO == info.ANIMAL_NO)
                     return (
