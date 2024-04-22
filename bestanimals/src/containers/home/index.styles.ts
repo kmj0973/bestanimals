@@ -7,10 +7,10 @@ export const MainBannerCotainer = styled.article`
   width: 100%;
   height: 380px;
   max-width: 1440px;
-  margin: 10px auto 30px auto;
+  margin: 0 auto 30px auto;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 `;
 
 export const MainBlurImage = styled(Image)`
@@ -30,7 +30,7 @@ export const MainBannerImage = styled(Image)`
 export const SimpleBannerContainer = styled.article`
   position: relative;
   width: 100%;
-  height: 1500px;
+  height: 1400px;
   max-width: 1440px;
   background-color: #fffcc6;
   margin: 0 auto;
@@ -38,30 +38,30 @@ export const SimpleBannerContainer = styled.article`
 
 export const FirstSimpleBanner = styled.div`
   position: absolute;
-  left: 7%;
-  top: 3%;
-  width: 700px;
-  height: 500px;
+  left: 10%;
+  top: 5%;
+  width: 650px;
+  height: 450px;
   background-color: wheat;
   z-index: 3;
 `;
 
 export const SecondSimpleBanner = styled.div`
   position: absolute;
-  right: 7%;
-  top: 500px;
-  width: 700px;
-  height: 500px;
+  right: 10%;
+  top: 475px;
+  width: 650px;
+  height: 450px;
   background-color: brown;
   z-index: 2;
 `;
 
 export const ThirdSimpleBanner = styled.div`
   position: absolute;
-  left: 7%;
-  bottom: 3%;
-  width: 700px;
-  height: 500px;
+  left: 10%;
+  bottom: 5%;
+  width: 650px;
+  height: 450px;
   background-color: beige;
   z-index: 1;
 `;
