@@ -44,71 +44,81 @@ export const SimpleBannerContainer = styled.article`
   width: 100%;
   height: 1400px;
   max-width: 1440px;
-  background-color: #fffcc6;
+  background-color: #eed8bc;
+  border-radius: 20px 20px 0 0;
   margin: 0 auto;
 `;
 
-export const FirstSimpleBanner = styled.div<{ scrollY: number }>`
+export const FirstSimpleBanner = styled.div<{
+  $scrollY: number;
+  $standardHeight: number;
+}>`
   position: absolute;
   display: none;
   left: 10%;
   top: 5%;
   width: 650px;
   height: 450px;
-  background-color: wheat;
+  background-color: #faf0e6;
   z-index: 3;
   ${(props) =>
-    props.scrollY >= 300 &&
+    props.$scrollY >= (2500 - props.$standardHeight) / 4 &&
     css`
       animation: ${leftMove} 1s ease-out;
       display: block;
     `}
   ${(props) =>
-    props.scrollY < 300 &&
+    props.$scrollY < (2500 - props.$standardHeight) / 4 &&
     css`
       animation: ${leftMoveDisappear} 1s ease-out;
     `}
 `;
 
-export const SecondSimpleBanner = styled.div<{ scrollY: number }>`
+export const SecondSimpleBanner = styled.div<{
+  $scrollY: number;
+  $standardHeight: number;
+}>`
   position: absolute;
   display: none;
   right: 10%;
   top: 475px;
   width: 650px;
   height: 450px;
-  background-color: brown;
+  background-color: #ffe1e1;
   z-index: 2;
   ${(props) =>
-    props.scrollY >= 500 &&
+    props.$scrollY >= (2500 - props.$standardHeight) / 2 &&
     css`
       animation: ${rightMove} 1s ease-out;
       display: block;
     `}
   ${(props) =>
-    props.scrollY < 500 &&
+    props.$scrollY < (2500 - props.$standardHeight) / 2 &&
     css`
       animation: ${rightMoveDisappear} 1s ease-out;
     `}
 `;
 
-export const ThirdSimpleBanner = styled.div<{ scrollY: number }>`
+export const ThirdSimpleBanner = styled.div<{
+  $scrollY: number;
+  $standardHeight: number;
+}>`
   position: absolute;
   display: none;
   left: 10%;
   bottom: 5%;
   width: 650px;
   height: 450px;
-  background-color: beige;
+  background-color: #fff1c1;
   z-index: 1;
   ${(props) =>
-    props.scrollY >= 700 &&
+    props.$scrollY >= ((2500 - props.$standardHeight) * 3) / 4 &&
     css`
       animation: ${leftMove} 1s ease-out;
       display: block;
     `}
   ${(props) =>
-    props.scrollY < 700 &&
+    props.$scrollY < ((2500 - props.$standardHeight) * 3) / 4 &&
     css`
       animation: ${leftMoveDisappear} 1s ease-out;
     `}
