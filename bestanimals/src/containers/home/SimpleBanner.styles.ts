@@ -44,9 +44,10 @@ export const SimpleBannerContainer = styled.article`
   width: 100%;
   height: 1400px;
   max-width: 1440px;
-  background-color: #eed8bc;
   border-radius: 20px 20px 0 0;
   margin: 0 auto;
+  /* background-color: #eed8bc; */
+  background: rgba(238, 216, 188, 0.8);
 `;
 
 export const FirstSimpleBanner = styled.div<{
@@ -122,4 +123,37 @@ export const ThirdSimpleBanner = styled.div<{
     css`
       animation: ${leftMoveDisappear} 1s ease-out;
     `}
+`;
+
+export const TextWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const MainText = styled.p`
+  width: 350px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #724000;
+  padding-left: 30px;
+`;
+
+export const SubText = styled.p`
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.3;
+  color: #878787;
+  padding-right: 30px;
+  & > a {
+    color: #878787;
+    &:hover {
+      color: #724000;
+    }
+  }
 `;
