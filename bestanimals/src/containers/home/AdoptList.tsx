@@ -1,24 +1,11 @@
+"use client";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as S from "./AdoptList.styles";
 import SlickButtonFix from "./SlickButtonFix";
-
-type resultProps = {
-  ANIMAL_NO: number; // 동물 번호
-  NM: string; // 이름
-  ENTRNC_DATE: string; // 입소 날짜
-  SPCS: string; // 종
-  BREEDS: string; // 품종
-  SEXDSTN: string; // 성별
-  AGE: string; // 나이
-  BDWGH: string; //체중
-  ADP_STTUS: string; //입양상태
-  TMPR_PRTC_STTUS: string; // 임시보호상태
-  INTRNC_MVP_URL: string; // 소개 동영상 URL
-  INTRCN_CN: string; // 소개내용
-  TMPR_PRTC_CN: string; //임시 보호 내용
-  PHOTO_URL: string;
-};
+import { resultProps } from "@/types/home.types";
+import { useState } from "react";
 
 const sliderSettings = {
   dots: true,
@@ -38,55 +25,38 @@ const sliderSettings = {
   ),
 };
 
-const AdoptList = async () => {
-  const infoData = await fetch(
-    "http://openapi.seoul.go.kr:8088/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/20/",
-    {
-      headers: {
-        Accept: "application / json",
-      },
-      method: "GET",
-      next: { revalidate: 50 },
-    }
-  ).then((res) => res.json());
+const AdoptList = (props: {
+  resultInfoData: Array<resultProps>;
+  duplicatePhotoData: Array<resultProps>;
+}) => {
+  const [isHover, setIsHover] = useState<string | undefined>("0");
 
-  const photoData = await fetch(
-    "http://openapi.seoul.go.kr:8088/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/300/",
-    {
-      headers: {
-        Accept: "application / json",
-      },
-      method: "GET",
-      next: { revalidate: 50 },
-    }
-  ).then((res) => res.json());
+  const onHover = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isHover === "0") setIsHover(e.currentTarget.dataset.id);
+    console.log(isHover);
+  };
 
-  const resultInfoData = infoData.TbAdpWaitAnimalView.row;
-
-  const resultPhotoData = photoData.TbAdpWaitAnimalPhotoView.row;
-
-  const duplicatePhotoData = resultPhotoData.reduce(
-    (prev: Array<resultProps>, now: resultProps) => {
-      //중복제거 함수
-      if (!prev.some((obj) => obj.ANIMAL_NO === now.ANIMAL_NO)) {
-        prev.push(now);
-      }
-      return prev;
-    },
-    []
-  );
+  const onLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isHover !== "0") setIsHover("0");
+  };
 
   return (
     <S.AdoptListContainer>
       <S.CustomSlider {...sliderSettings}>
-        {resultInfoData.map((info: resultProps, i: number) => {
+        {props.resultInfoData.map((info: resultProps, i: number) => {
           return (
-            <S.AdoptListWrapper key={i}>
-              <S.AdoptLi color={info.SEXDSTN == "M" ? "#55bffb" : "#ffa9a9"}>
-                {duplicatePhotoData.map((photo: resultProps) => {
+            <S.AdoptListWrapper key={info.ANIMAL_NO}>
+              <S.AdoptLi
+                data-id={info.ANIMAL_NO}
+                color={info.SEXDSTN == "M" ? "#55bffb" : "#ffa9a9"}
+                onMouseOver={onHover}
+                onMouseLeave={onLeave}
+              >
+                {props.duplicatePhotoData.map((photo: resultProps) => {
                   if (photo.ANIMAL_NO == info.ANIMAL_NO)
                     return (
                       <S.AdoptLiPhoto
+                        key={info.ANIMAL_NO}
                         src={`https://` + photo.PHOTO_URL}
                         alt="animal_photo_image"
                       />
@@ -100,6 +70,17 @@ const AdoptList = async () => {
                   )}
                   <S.AnimalName>{info.BREEDS}</S.AnimalName>
                 </S.AdoptLiInfo>
+                {String(info.ANIMAL_NO) == isHover ? (
+                  <S.AdoptDetailInfo>
+                    <S.DetailInfo>이름: {info.NM}</S.DetailInfo>
+                    <S.DetailInfo>나이: {info.AGE}</S.DetailInfo>
+                    <S.DetailInfo>체중: {info.BDWGH}kg</S.DetailInfo>
+                    <S.DetailInfo>입양 상태: {info.ADP_STTUS}</S.DetailInfo>
+                    <S.DetailInfo>
+                      임시 보호 상태: {info.TMPR_PRTC_STTUS}
+                    </S.DetailInfo>
+                  </S.AdoptDetailInfo>
+                ) : null}
               </S.AdoptLi>
             </S.AdoptListWrapper>
           );

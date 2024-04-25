@@ -50,6 +50,7 @@ export const AdoptListWrapper = styled.div`
 `;
 
 export const AdoptLi = styled.div<{ color: string }>`
+  position: relative;
   width: 100%;
   max-width: 375px;
   height: 90%;
@@ -87,4 +88,20 @@ export const Male = styled(PiGenderMaleBold)`
 
 export const AnimalName = styled.div`
   padding-top: 1rem;
+`;
+
+export const AdoptDetailInfo = styled.div`
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+`;
+
+export const DetailInfo = styled.div`
+  color: white;
+  font-size: 1.5rem;
+  padding: 15px 15px 0 15px;
 `;

@@ -2,7 +2,7 @@ import styled, { css, keyframes } from "styled-components";
 
 const leftMove = keyframes`
   0% {
-    left: -10%;
+    left: 0%;
     opacity: 0;
   }
   100%{
@@ -15,13 +15,13 @@ const leftMoveDisappear = keyframes`
     display: block;
   }
   100%{
-    left:-10%;
+    left:0%;
     opacity: 0;
   }
 `;
 const rightMove = keyframes`
   0% {
-    right: -10%;
+    right: 0%;
     opacity: 0;
   }
   100%{
@@ -34,7 +34,7 @@ const rightMoveDisappear = keyframes`
     display: block;
   }
   100%{
-    right:-10%;
+    right: 0%;
     opacity: 0;
   }
 `;
