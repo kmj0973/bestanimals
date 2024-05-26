@@ -1,3 +1,1 @@
-export default function Procedure() {
-  return <div>procedure</div>;
-}
+export { default } from "@/containers/procedure";

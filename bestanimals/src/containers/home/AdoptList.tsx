@@ -33,7 +33,6 @@ const AdoptList = (props: {
 
   const onHover = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isHover === "0") setIsHover(e.currentTarget.dataset.id);
-    console.log(isHover);
   };
 
   const onLeave = (e: React.MouseEvent<HTMLDivElement>) => {

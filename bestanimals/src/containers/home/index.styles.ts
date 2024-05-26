@@ -7,7 +7,7 @@ export const MainBannerCotainer = styled.article`
   width: 100%;
   height: 380px;
   max-width: 1440px;
-  margin: 0 auto 30px auto;
+  margin: 1px auto 30px auto;
   position: relative;
   overflow: hidden;
   border-radius: 0 0 10px 10px;

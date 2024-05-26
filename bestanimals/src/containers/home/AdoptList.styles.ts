@@ -97,7 +97,7 @@ export const AdoptDetailInfo = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
-  border-radius: 40px;
+  border-radius: 38px;
 `;
 
 export const DetailInfo = styled.div`
