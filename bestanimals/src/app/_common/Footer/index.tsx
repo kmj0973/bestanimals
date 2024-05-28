@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <S.FooterContainer>
-        <div>(주)BestAnimals</div>
+        <S.Content>(주)BestAnimals</S.Content>
       </S.FooterContainer>
     </footer>
   );

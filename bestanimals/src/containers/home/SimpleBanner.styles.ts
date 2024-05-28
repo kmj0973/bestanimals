@@ -46,8 +46,8 @@ export const SimpleBannerContainer = styled.article`
   max-width: 1440px;
   border-radius: 20px 20px 0 0;
   margin: 0 auto;
-  /* background-color: #eed8bc; */
-  background: rgba(238, 216, 188, 0.8);
+  background-color: #f8f0e3;
+  /* background: rgba(238, 216, 188, 0.8); */
 `;
 
 export const FirstSimpleBanner = styled.div<{
@@ -60,7 +60,7 @@ export const FirstSimpleBanner = styled.div<{
   top: 5%;
   width: 650px;
   height: 450px;
-  background-color: #faf0e6;
+  background-color: #f5ebdc;
   z-index: 3;
   ${(props) =>
     props.$scrollY >= (2500 - props.$standardHeight) / 4 &&
@@ -85,7 +85,7 @@ export const SecondSimpleBanner = styled.div<{
   top: 475px;
   width: 650px;
   height: 450px;
-  background-color: #ffe1e1;
+  background-color: #eec5cf;
   z-index: 2;
   ${(props) =>
     props.$scrollY >= (2500 - props.$standardHeight) / 2 &&
@@ -110,7 +110,7 @@ export const ThirdSimpleBanner = styled.div<{
   bottom: 5%;
   width: 650px;
   height: 450px;
-  background-color: #fff1c1;
+  background-color: #eaeec5;
   z-index: 1;
   ${(props) =>
     props.$scrollY >= ((2500 - props.$standardHeight) * 3) / 4 &&
@@ -138,7 +138,7 @@ export const MainText = styled.p`
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.6;
-  color: #724000;
+  color: white;
   padding-left: 30px;
 `;
 
@@ -148,10 +148,10 @@ export const SubText = styled.p`
   text-align: center;
   font-size: 2rem;
   line-height: 1.3;
-  color: #878787;
+  color: white;
   padding-right: 30px;
   & > a {
-    color: #878787;
+    color: white;
     &:hover {
       color: #724000;
     }

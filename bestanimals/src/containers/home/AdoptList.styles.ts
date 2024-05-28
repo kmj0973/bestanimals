@@ -1,5 +1,3 @@
-"use client";
-
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { PiGenderMaleBold, PiGenderFemaleBold } from "react-icons/pi";
 import Slider from "react-slick";
@@ -15,7 +13,7 @@ export const AdoptListContainer = styled.article`
 export const CustomSlider = styled(Slider)`
   padding: 0 2rem;
   height: 100%;
-  background-color: #fff3e3;
+  background-color: #ece1cb;
   border-radius: 20px;
 `;
 
@@ -46,7 +44,7 @@ export const AdoptListWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 500px;
-  background-color: #fff3e3;
+  background-color: #ece1cb;
 `;
 
 export const AdoptLi = styled.div<{ color: string }>`

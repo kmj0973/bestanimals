@@ -17,7 +17,7 @@ const Home = async () => {
   ).then((res) => res.json());
 
   const photoData = await fetch(
-    "http://openapi.seoul.go.kr:8088/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/300/",
+    "http://openapi.seoul.go.kr:8088/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/500/",
     {
       headers: {
         Accept: "application / json",

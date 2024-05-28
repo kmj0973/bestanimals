@@ -2,13 +2,7 @@ import StyledComponentsRegistry from "./lib/registry";
 import Header from "./_common/Header";
 import Footer from "./_common/Footer";
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
 import "@/styles/globals.css";
-
-const noto = Noto_Sans_KR({
-  //google font
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Best Animals",
@@ -23,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className={noto.className}>
+      <body>
         <StyledComponentsRegistry>
           <Header />
           {children}

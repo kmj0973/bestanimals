@@ -1,5 +1,3 @@
-"use client";
-
 const SlickButtonFix = (props: {
   children: JSX.Element;
   slideCount?: number;
