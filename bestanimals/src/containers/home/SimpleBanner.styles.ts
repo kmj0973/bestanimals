@@ -60,7 +60,7 @@ export const FirstSimpleBanner = styled.div<{
   top: 5%;
   width: 650px;
   height: 450px;
-  background-color: #f5ebdc;
+  background-color: #ece1cb;
   z-index: 3;
   ${(props) =>
     props.$scrollY >= (2500 - props.$standardHeight) / 4 &&
