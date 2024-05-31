@@ -51,12 +51,6 @@ const ProcedureList = () => {
               책임지고 잘 돌보아 줄 수 있나요?
             </div>
           </S.NoticeBox>
-          <S.DotsBox>
-            <S.RightLargeDot></S.RightLargeDot>
-            <S.RightSmallDot
-              style={{ backgroundColor: "#C5A999" }}
-            ></S.RightSmallDot>
-          </S.DotsBox>
         </S.ContentBox>
       </S.ContentBoxContainer>
       <S.ContentBoxContainer $scrollY={scroll} $standardHeight={height}>
@@ -83,12 +77,12 @@ const ProcedureList = () => {
             <S.Line />
           </S.Circle>
           <S.DotsBox>
-            <S.LeftLargeDot
+            <S.RightLargeDot
               style={{ backgroundColor: "#C5A999" }}
-            ></S.LeftLargeDot>
-            <S.LeftSmallDot
+            ></S.RightLargeDot>
+            <S.RightSmallDot
               style={{ backgroundColor: "#BBA395" }}
-            ></S.LeftSmallDot>
+            ></S.RightSmallDot>
           </S.DotsBox>
         </S.ContentBox>
       </S.ContentBoxContainer>
@@ -115,12 +109,12 @@ const ProcedureList = () => {
             </div>
           </S.NoticeBox>
           <S.DotsBox>
-            <S.RightLargeDot
+            <S.LeftLargeDot
               style={{ backgroundColor: "#BBA395" }}
-            ></S.RightLargeDot>
-            <S.RightSmallDot
+            ></S.LeftLargeDot>
+            <S.LeftSmallDot
               style={{ backgroundColor: "#B19E92" }}
-            ></S.RightSmallDot>
+            ></S.LeftSmallDot>
           </S.DotsBox>
         </S.ContentBox>
       </S.ContentBoxContainer>
@@ -146,12 +140,12 @@ const ProcedureList = () => {
             <S.Line />
           </S.Circle>
           <S.DotsBox>
-            <S.LeftLargeDot
+            <S.RightLargeDot
               style={{ backgroundColor: "#B19E92" }}
-            ></S.LeftLargeDot>
-            <S.LeftSmallDot
+            ></S.RightLargeDot>
+            <S.RightSmallDot
               style={{ backgroundColor: "#A7988E" }}
-            ></S.LeftSmallDot>
+            ></S.RightSmallDot>
           </S.DotsBox>
         </S.ContentBox>
       </S.ContentBoxContainer>
@@ -183,8 +177,17 @@ const ProcedureList = () => {
               적극적으로 응해 주시기 바랍니다.
             </div>
           </S.NoticeBox>
+          <S.DotsBox>
+            <S.LeftLargeDot
+              style={{ backgroundColor: "#BBA395" }}
+            ></S.LeftLargeDot>
+            <S.LeftSmallDot
+              style={{ backgroundColor: "#B19E92" }}
+            ></S.LeftSmallDot>
+          </S.DotsBox>
         </S.ContentBox>
       </S.ContentBoxContainer>
+      <S.UnderArrow $scrollY={scroll}>스크롤을 내리세요!</S.UnderArrow>
     </S.ContentsContainer>
   );
 };

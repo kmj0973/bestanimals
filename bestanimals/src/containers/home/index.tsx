@@ -6,7 +6,7 @@ import { resultProps } from "@/types/home.types";
 
 const Home = async () => {
   const infoData = await fetch(
-    "http://openapi.seoul.go.kr:8088/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/20/",
+    "http://openapi.seoul.go.kr:8088/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/25/",
     {
       headers: {
         Accept: "application / json",

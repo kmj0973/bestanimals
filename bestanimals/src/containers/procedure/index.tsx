@@ -1,11 +1,12 @@
-import * as S from "./index.styels";
+import * as S from "./index.styles";
 import ProcedureList from "./ProcedureList";
+import SmallHeader from "@/app/_common/SmallHeader";
 
 const Procedure = () => {
   return (
     <main>
       <S.ProcedureContainer>
-        <S.Header>입양 절차</S.Header>
+        <SmallHeader content={"입양 절차"} />
         <ProcedureList />
       </S.ProcedureContainer>
     </main>

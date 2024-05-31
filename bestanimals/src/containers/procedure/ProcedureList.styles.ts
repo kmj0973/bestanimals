@@ -19,6 +19,61 @@ const disappear = keyframes`
     opacity: 0;
   }
 `;
+
+const appearAni = css`
+  animation: ${appear} 1.5s ease-out;
+  display: block;
+  :nth-child(3) {
+    :nth-child(1) {
+      animation: ${appear} 0.5s ease-out;
+    }
+    :nth-child(2) {
+      animation: ${appear} 1s ease-out;
+    }
+  }
+`;
+
+const disappearAni = css`
+  animation: ${disappear} 1.5s ease-out;
+  :nth-child(3) {
+    :nth-child(1) {
+      animation: ${disappear} 1s ease-out;
+      display: none;
+    }
+    :nth-child(2) {
+      animation: ${disappear} 0.5s ease-out;
+      display: none;
+    }
+  }
+`;
+
+export const UnderArrow = styled.div<{
+  $scrollY: number;
+}>`
+  position: fixed;
+  width: 100%;
+  max-width: 1440px;
+  height: 200px;
+
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  opacity: 0.5;
+
+  bottom: 0px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${(props) =>
+    props.$scrollY > 0 &&
+    css`
+      display: none;
+    `}
+`;
+
 export const ContentsContainer = styled.div`
   width: 100%;
   max-width: 1440px;
@@ -35,69 +90,32 @@ export const ContentBoxContainer = styled.div<{
   display: none;
 
   &:nth-child(1) {
-    ${(props) =>
-      props.$scrollY >= 0 &&
-      css`
-        animation: ${appear} 1.5s ease-out;
-        display: block;
-      `}
-    ${(props) =>
-      props.$scrollY < 0 &&
-      css`
-        animation: ${disappear} 1.5s ease-out;
-      `}
+    ${(props) => props.$scrollY >= 0 && appearAni}
+    ${(props) => props.$scrollY < 0 && disappearAni}
   }
   &:nth-child(2) {
     ${(props) =>
-      props.$scrollY >= (2900 - props.$standardHeight) / 12 &&
-      css`
-        animation: ${appear} 1.5s ease-out;
-        display: block;
-      `}
+      props.$scrollY >= (2500 - props.$standardHeight * 2) / 12 && appearAni}
     ${(props) =>
-      props.$scrollY < (2900 - props.$standardHeight) / 12 &&
-      css`
-        animation: ${disappear} 1.5s ease-out;
-      `}
+      props.$scrollY < (2500 - props.$standardHeight * 2) / 12 && disappearAni}
   }
   &:nth-child(3) {
     ${(props) =>
-      props.$scrollY >= (3000 - props.$standardHeight) / 3 &&
-      css`
-        animation: ${appear} 1.5s ease-out;
-        display: block;
-      `}
+      props.$scrollY >= (2500 - props.$standardHeight) / 4 && appearAni}
     ${(props) =>
-      props.$scrollY < (3000 - props.$standardHeight) / 3 &&
-      css`
-        animation: ${disappear} 1.5s ease-out;
-      `}
+      props.$scrollY < (2500 - props.$standardHeight) / 4 && disappearAni}
   }
   &:nth-child(4) {
     ${(props) =>
-      props.$scrollY >= (3200 - props.$standardHeight) / 2 &&
-      css`
-        animation: ${appear} 1.5s ease-out;
-        display: block;
-      `}
+      props.$scrollY >= (2700 - props.$standardHeight) / 2 && appearAni}
     ${(props) =>
-      props.$scrollY < (3200 - props.$standardHeight) / 2 &&
-      css`
-        animation: ${disappear} 1.5s ease-out;
-      `}
+      props.$scrollY < (2700 - props.$standardHeight) / 2 && disappearAni}
   }
   &:nth-child(5) {
     ${(props) =>
-      props.$scrollY >= ((2500 - props.$standardHeight) * 2) / 2 &&
-      css`
-        animation: ${appear} 1.5s ease-out;
-        display: block;
-      `}
+      props.$scrollY >= ((2500 - props.$standardHeight) * 2) / 2 && appearAni}
     ${(props) =>
-      props.$scrollY < ((2500 - props.$standardHeight) * 2) / 2 &&
-      css`
-        animation: ${disappear} 1.5s ease-out;
-      `}
+      props.$scrollY < ((2500 - props.$standardHeight) * 2) / 2 && disappearAni}
   }
 `;
 
@@ -194,7 +212,7 @@ export const DotsBox = styled.div`
   position: absolute;
   width: 10%;
   height: 100px;
-  bottom: 0px;
+  top: -100px;
 `;
 
 export const RightLargeDot = styled.div`
