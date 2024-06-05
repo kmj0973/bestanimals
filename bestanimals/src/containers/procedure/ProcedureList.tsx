@@ -187,7 +187,9 @@ const ProcedureList = () => {
           </S.DotsBox>
         </S.ContentBox>
       </S.ContentBoxContainer>
-      <S.UnderArrow $scrollY={scroll}>스크롤을 내리세요!</S.UnderArrow>
+      <S.UnderArrow $scrollY={scroll}>
+        <div>스크롤을 내리세요!</div>
+      </S.UnderArrow>
     </S.ContentsContainer>
   );
 };

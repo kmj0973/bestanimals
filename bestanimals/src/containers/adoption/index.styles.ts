@@ -1,6 +1,18 @@
 "use client";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const btnStyle = css`
+  width: auto;
+  height: 50px;
+  font-size: 1.5rem;
+  margin-right: 20px;
+  padding: 3px;
+
+  border: none;
+
+  text-align: center;
+`;
 
 export const AdoptionContainer = styled.div`
   width: 100%;
@@ -14,7 +26,6 @@ export const ContentsContainer = styled.div`
   width: 100%;
   max-width: 1440px;
 
-  padding: 100px 0px;
   margin: 0px auto;
   background-color: #f8f0e3;
 
@@ -22,7 +33,7 @@ export const ContentsContainer = styled.div`
   flex-direction: column;
 `;
 
-export const OptionContainer = styled.form`
+export const OptionContainer = styled.div`
   width: 100%;
   height: 200px;
 
@@ -32,31 +43,14 @@ export const OptionContainer = styled.form`
 `;
 
 export const Species = styled.select`
-  width: 120px;
-  height: 50px;
-  font-size: 1.5rem;
-  margin-right: 20px;
-  border: none;
-
-  text-align: center;
+  ${btnStyle}
+  transition: all 1s ease-out;
 `;
 export const Gender = styled.select`
-  width: 100px;
-  height: 50px;
-  font-size: 1.5rem;
-  margin-right: 20px;
-  border: none;
-
-  text-align: center;
+  ${btnStyle}
 `;
 export const RegionCenter = styled.select`
-  width: 150px;
-  height: 50px;
-  font-size: 1.5rem;
-  margin-right: 20px;
-  border: none;
-
-  text-align: center;
+  ${btnStyle}
 `;
 
 export const SearchButton = styled.button`
@@ -71,7 +65,7 @@ export const AdoptionListContainer = styled.div`
   width: 100%;
   height: 2000px;
 
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   overflow: auto;
 `;

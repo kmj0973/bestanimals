@@ -63,13 +63,17 @@ export const UnderArrow = styled.div<{
   bottom: 0px;
   margin: 0 auto;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   ${(props) =>
     props.$scrollY > 0 &&
     css`
+      animation: ${disappear} 0.5s ease-out;
       display: none;
     `}
 `;

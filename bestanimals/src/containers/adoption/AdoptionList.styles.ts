@@ -12,7 +12,7 @@ export const AdoptListWrapper = styled.div`
 export const AdoptLi = styled.div<{ color: string }>`
   position: relative;
   width: 100%;
-  max-width: 375px;
+  min-width: 375px;
   height: 90%;
   margin: 0 1.5rem;
   border: 3px solid ${(props) => props.color};
@@ -23,6 +23,7 @@ export const AdoptLi = styled.div<{ color: string }>`
 export const AdoptLiPhoto = styled.img`
   width: 100%;
   height: 300px;
+  min-height: 300px;
   border-radius: 38px 38px 0 0;
   object-fit: cover;
 `;
