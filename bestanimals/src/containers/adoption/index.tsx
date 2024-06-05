@@ -2,35 +2,18 @@ import { resultProps } from "@/types/home.types";
 import * as S from "./index.styles";
 import SmallHeader from "@/app/_common/SmallHeader";
 import AdoptionList from "./AdoptionList";
+import axios from "axios";
 
 const Adoption = async () => {
-  const infoData = await fetch(
-    "http://openapi.seoul.go.kr:8088/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/25/",
-    {
-      headers: {
-        Accept: "application / json",
-      },
-      method: "GET",
-      next: { revalidate: 50 },
-    }
-  ).then((res) => res.json());
+  const infoData = await axios(
+    "http://openapi.seoul.go.kr:8088/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/25/"
+  ).then((res) => res.data.TbAdpWaitAnimalView.row);
 
-  const photoData = await fetch(
-    "http://openapi.seoul.go.kr:8088/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/500/",
-    {
-      headers: {
-        Accept: "application / json",
-      },
-      method: "GET",
-      cache: "no-store",
-    }
-  ).then((res) => res.json());
+  const photoData = await axios(
+    "http://openapi.seoul.go.kr:8088/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/500/"
+  ).then((res) => res.data.TbAdpWaitAnimalPhotoView.row);
 
-  const resultInfoData = infoData.TbAdpWaitAnimalView.row;
-
-  const resultPhotoData = photoData.TbAdpWaitAnimalPhotoView.row;
-
-  const duplicatePhotoData = resultPhotoData.reduce(
+  const duplicatePhotoData = photoData.reduce(
     (prev: Array<resultProps>, now: resultProps) => {
       //중복제거 함수
       if (!prev.some((obj) => obj.ANIMAL_NO === now.ANIMAL_NO)) {
@@ -81,7 +64,7 @@ const Adoption = async () => {
           </S.OptionContainer>
           <S.AdoptionListContainer>
             <AdoptionList
-              resultInfoData={resultInfoData}
+              resultInfoData={infoData}
               duplicatePhotoData={duplicatePhotoData}
             />
           </S.AdoptionListContainer>
