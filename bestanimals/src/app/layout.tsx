@@ -1,4 +1,7 @@
+import { Suspense } from "react";
+
 import StyledComponentsRegistry from "./lib/registry";
+import Providers from "./Providers";
 import Header from "./_common/Header";
 import Footer from "./_common/Footer";
 import type { Metadata } from "next";
@@ -18,11 +21,15 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body>
-        <StyledComponentsRegistry>
-          <Header />
-          {children}
-          <Footer />
-        </StyledComponentsRegistry>
+        <Suspense fallback={null}>
+          <Providers>
+            <StyledComponentsRegistry>
+              <Header />
+              {children}
+              <Footer />
+            </StyledComponentsRegistry>
+          </Providers>
+        </Suspense>
       </body>
     </html>
   );
