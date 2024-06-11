@@ -1,6 +1,15 @@
 import { PiGenderFemaleBold, PiGenderMaleBold } from "react-icons/pi";
 import styled from "styled-components";
 
+export const AdoptionListContainer = styled.div`
+  width: 100%;
+  height: 2000px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: auto;
+`;
+
 export const AdoptListWrapper = styled.div`
   display: flex !important;
   justify-content: center;
@@ -12,7 +21,7 @@ export const AdoptListWrapper = styled.div`
 export const AdoptLi = styled.div<{ color: string }>`
   position: relative;
   width: 100%;
-  min-width: 375px;
+  min-width: 275px;
   height: 90%;
   margin: 0 1.5rem;
   border: 3px solid ${(props) => props.color};

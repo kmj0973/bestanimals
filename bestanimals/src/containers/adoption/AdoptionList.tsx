@@ -19,7 +19,7 @@ const AdoptionList = (props: {
   };
 
   return (
-    <>
+    <S.AdoptionListContainer>
       {props.resultInfoData.map((info: resultProps, i: number) => {
         return (
           <S.AdoptListWrapper key={info.ANIMAL_NO}>
@@ -62,7 +62,7 @@ const AdoptionList = (props: {
           </S.AdoptListWrapper>
         );
       })}
-    </>
+    </S.AdoptionListContainer>
   );
 };
 
