@@ -43,6 +43,7 @@ const AdoptList = (props: {
     <S.AdoptListContainer>
       <S.CustomSlider {...sliderSettings}>
         {props.resultInfoData.map((info: resultProps, i: number) => {
+          if (i > 9) return;
           return (
             <S.AdoptListWrapper key={info.ANIMAL_NO}>
               <S.AdoptLi

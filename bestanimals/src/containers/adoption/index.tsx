@@ -1,28 +1,13 @@
-import { resultProps } from "@/types/home.types";
+"use client";
+
 import * as S from "./index.styles";
 import SmallHeader from "@/app/_common/SmallHeader";
 import AdoptionList from "./AdoptionList";
-import axios from "axios";
+import { useInfoData, usePhotoData } from "./index.hooks";
 
-const Adoption = async () => {
-  const infoData = await axios(
-    "http://openapi.seoul.go.kr:8088/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/25/"
-  ).then((res) => res.data.TbAdpWaitAnimalView.row);
-
-  const photoData = await axios(
-    "http://openapi.seoul.go.kr:8088/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/500/"
-  ).then((res) => res.data.TbAdpWaitAnimalPhotoView.row);
-
-  const duplicatePhotoData = photoData.reduce(
-    (prev: Array<resultProps>, now: resultProps) => {
-      //중복제거 함수
-      if (!prev.some((obj) => obj.ANIMAL_NO === now.ANIMAL_NO)) {
-        prev.push(now);
-      }
-      return prev;
-    },
-    []
-  );
+const Adoption = () => {
+  const { infoData } = useInfoData();
+  const { photoData } = usePhotoData();
 
   return (
     <main>
@@ -65,7 +50,7 @@ const Adoption = async () => {
           <S.AdoptionListContainer>
             <AdoptionList
               resultInfoData={infoData}
-              duplicatePhotoData={duplicatePhotoData}
+              duplicatePhotoData={photoData}
             />
           </S.AdoptionListContainer>
         </S.ContentsContainer>
