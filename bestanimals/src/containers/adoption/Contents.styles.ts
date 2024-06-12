@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled, { css } from "styled-components";
 
 const btnStyle = css`
@@ -13,7 +14,18 @@ const btnStyle = css`
   text-align: center;
 `;
 
-export const OptionContainer = styled.div`
+export const ContentsContainer = styled.div`
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0px auto;
+  background-color: #f8f0e3;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+export const OptionContainer = styled.form`
   width: 100%;
   height: 200px;
 
@@ -30,15 +42,4 @@ export const Gender = styled.select`
 `;
 export const RegionCenter = styled.select`
   ${btnStyle}
-`;
-
-export const SearchButton = styled.button`
-  width: 100px;
-  height: 50px;
-
-  border-radius: 10px;
-
-  background-color: #fff3e3;
-
-  font-size: 1.3rem;
 `;

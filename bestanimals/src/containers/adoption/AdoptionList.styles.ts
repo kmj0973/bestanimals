@@ -8,6 +8,7 @@ export const AdoptionListContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   overflow: auto;
+  align-content: start;
 `;
 
 export const AdoptListWrapper = styled.div`
