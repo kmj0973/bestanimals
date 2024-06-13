@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import * as S from "./Contents.styles";
-import { useInfoData, usePhotoData } from "./index.hooks";
-import AdoptionList from "./AdoptionList";
+import { useInfoData, usePhotoData } from "../index.hooks";
+import AdoptionList from "../AdoptionList/AdoptionList";
 
 const Contents = () => {
   const { infoData } = useInfoData();

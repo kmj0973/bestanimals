@@ -2,8 +2,8 @@
 
 import * as S from "./index.styles";
 import main_banner from "../../../public/images/home/main_banner.jpg";
-import AdoptList from "./AdoptList";
-import SimpleBanner from "./SimpleBanner";
+import AdoptList from "./AdoptList/AdoptList";
+import SimpleBanner from "./SimpleBanner/SimpleBanner";
 import { useInfoData, usePhotoData } from "../adoption/index.hooks";
 
 const Home = () => {

@@ -1,5 +1,5 @@
 import * as S from "./index.styles";
-import ProcedureList from "./ProcedureList";
+import ProcedureList from "./ProcedureList/ProcedureList";
 import SmallHeader from "@/app/_common/SmallHeader";
 
 const Procedure = () => {

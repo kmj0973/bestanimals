@@ -1,4 +1,4 @@
-import Contents from "./Contents";
+import Contents from "./Contents/Contents";
 import * as S from "./index.styles";
 import SmallHeader from "@/app/_common/SmallHeader";
 

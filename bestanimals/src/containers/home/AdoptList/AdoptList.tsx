@@ -1,13 +1,33 @@
 "use client";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import * as S from "./AdoptList.styles";
+import SlickButtonFix from "../SimpleBanner/SlickButtonFix";
 import { resultProps } from "@/types/home.types";
-import * as S from "./AdoptionList.styles";
 import { useState } from "react";
 
-const AdoptionList = (props: {
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  prevArrow: (
+    <SlickButtonFix>
+      <S.CustomSliderPrevArrow size="3rem" />
+    </SlickButtonFix>
+  ),
+  nextArrow: (
+    <SlickButtonFix>
+      <S.CustomSliderNextArrow size="3rem" />
+    </SlickButtonFix>
+  ),
+};
+
+const AdoptList = (props: {
   resultInfoData: Array<resultProps>;
   duplicatePhotoData: Array<resultProps>;
-  options: Array<string>;
 }) => {
   const [isHover, setIsHover] = useState<string | undefined>("0");
 
@@ -20,13 +40,10 @@ const AdoptionList = (props: {
   };
 
   return (
-    <S.AdoptionListContainer>
-      {props.resultInfoData.map((info: resultProps, i: number) => {
-        if (
-          info.NM.includes(props.options[2]) &&
-          info.SPCS.includes(props.options[0]) &&
-          info.SEXDSTN.includes(props.options[1])
-        ) {
+    <S.AdoptListContainer>
+      <S.CustomSlider {...sliderSettings}>
+        {props.resultInfoData.map((info: resultProps, i: number) => {
+          if (i > 9) return;
           return (
             <S.AdoptListWrapper key={info.ANIMAL_NO}>
               <S.AdoptLi
@@ -67,10 +84,10 @@ const AdoptionList = (props: {
               </S.AdoptLi>
             </S.AdoptListWrapper>
           );
-        }
-      })}
-    </S.AdoptionListContainer>
+        })}
+      </S.CustomSlider>
+    </S.AdoptListContainer>
   );
 };
 
-export default AdoptionList;
+export default AdoptList;
