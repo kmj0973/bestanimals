@@ -96,6 +96,22 @@ export const AdoptDetailInfo = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 38px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  a {
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px;
+
+    border: 3px solid white;
+    border-radius: 15px;
+
+    cursor: pointer;
+  }
 `;
 
 export const DetailInfo = styled.div`

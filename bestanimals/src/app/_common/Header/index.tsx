@@ -13,7 +13,6 @@ const Header = () => {
 
   const handleClick: MouseEventHandler<HTMLElement> = (e) => {
     e.preventDefault();
-    console.log(pathName);
   };
 
   return (
@@ -30,9 +29,19 @@ const Header = () => {
                 <S.Menu
                   key={title}
                   onClick={handleClick}
-                  color={href == pathName ? "#724000" : "#D3D3D3"}
+                  color={
+                    (
+                      href.length > 1
+                        ? pathName.includes(href)
+                        : href == pathName
+                    )
+                      ? "#724000"
+                      : "#D3D3D3"
+                  }
                 >
-                  {href == pathName ? (
+                  {(
+                    href.length > 1 ? pathName.includes(href) : href == pathName
+                  ) ? (
                     <S.NavAccentImage src={header_nav_accent} alt="aceent" />
                   ) : null}
                   <Link href={href}>{title}</Link>

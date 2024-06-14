@@ -24,7 +24,7 @@ const Contents = () => {
   const handleRgionCenterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setRegionCenter(e.target.value);
   };
-  console.log(species, gender);
+
   return (
     <S.ContentsContainer>
       <S.OptionContainer>

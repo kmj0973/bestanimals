@@ -6,6 +6,8 @@ import * as S from "./AdoptList.styles";
 import SlickButtonFix from "../SimpleBanner/SlickButtonFix";
 import { resultProps } from "@/types/home.types";
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const sliderSettings = {
   dots: true,
@@ -29,6 +31,8 @@ const AdoptList = (props: {
   resultInfoData: Array<resultProps>;
   duplicatePhotoData: Array<resultProps>;
 }) => {
+  const pathName = usePathname();
+
   const [isHover, setIsHover] = useState<string | undefined>("0");
 
   const onHover = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -79,6 +83,9 @@ const AdoptList = (props: {
                     <S.DetailInfo>
                       임시 보호 상태: {info.TMPR_PRTC_STTUS}
                     </S.DetailInfo>
+                    <Link href={pathName + "adoption/" + info.ANIMAL_NO}>
+                      자세히 보기
+                    </Link>
                   </S.AdoptDetailInfo>
                 ) : null}
               </S.AdoptLi>
