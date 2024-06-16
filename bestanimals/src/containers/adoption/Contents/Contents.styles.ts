@@ -8,7 +8,7 @@ const btnStyle = css`
   margin-right: 20px;
   padding: 10px;
 
-  border: none;
+  border: 2px solid black;
   border-radius: 10px;
 
   text-align: center;
@@ -19,7 +19,7 @@ export const ContentsContainer = styled.div`
   max-width: 1440px;
 
   margin: 0px auto;
-  background-color: #f8f0e3;
+  background-color: white;
 
   display: flex;
   flex-direction: column;

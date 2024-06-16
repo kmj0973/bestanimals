@@ -9,7 +9,7 @@ export interface resultProps {
   BDWGH: string; //체중
   ADP_STTUS: string; //입양상태
   TMPR_PRTC_STTUS: string; // 임시보호상태
-  INTRNC_MVP_URL: string; // 소개 동영상 URL
+  INTRCN_MVP_URL: string; // 소개 동영상 URL
   INTRCN_CN: string; // 소개내용
   TMPR_PRTC_CN: string; //임시 보호 내용
   PHOTO_URL: string;

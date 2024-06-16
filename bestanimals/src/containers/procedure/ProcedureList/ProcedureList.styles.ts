@@ -84,7 +84,7 @@ export const ContentsContainer = styled.div`
   height: 2500px;
   padding: 100px 0px;
   margin: 0px auto;
-  background-color: #f8f0e3;
+  background-color: white;
 `;
 
 export const ContentBoxContainer = styled.div<{

@@ -5,7 +5,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
-  background-color: #fff3e3;
+  background-color: white;
   width: 100%;
   height: 80px;
 `;

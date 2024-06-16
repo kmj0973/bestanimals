@@ -11,8 +11,8 @@ export const Header = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: #fff3e3;
-  color: #3b4248;
+  background-color: #c5a999;
+  color: white;
   font-size: 1.5rem;
   font-weight: 600;
 `;

@@ -5,6 +5,7 @@ const DetailContents = (props: {
   infoData: resultProps;
   photoData: resultProps;
 }) => {
+  console.log(props.infoData.INTRCN_MVP_URL);
   return (
     <S.ContentsContainer>
       <S.InfoContainer>
@@ -14,8 +15,14 @@ const DetailContents = (props: {
             src={`https://` + props.photoData.PHOTO_URL}
             alt="animal_photo_image"
           />
-
-          <S.NameBox>{props.infoData.NM}</S.NameBox>
+          <S.NameBox>
+            <div>{props.infoData.NM}</div>
+            {props.infoData.SEXDSTN == "M" ? (
+              <S.Male size="30px" />
+            ) : (
+              <S.Female size="30px" />
+            )}
+          </S.NameBox>
         </S.PhotoNameWrapper>
         <S.InfoWrapper>
           <S.InfoBox>
@@ -28,6 +35,9 @@ const DetailContents = (props: {
           <S.InfoBox>무게 : {props.infoData.BDWGH}kg</S.InfoBox>
           <S.InfoBox>나이 : {props.infoData.AGE}</S.InfoBox>
           <S.UnderLine></S.UnderLine>
+          <S.YoutubeUrl href={props.infoData.INTRCN_MVP_URL}>
+            {props.infoData.NM} 소개 영상
+          </S.YoutubeUrl>
         </S.InfoWrapper>
       </S.InfoContainer>
       <S.DetailCotainer>

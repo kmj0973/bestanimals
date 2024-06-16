@@ -1,3 +1,4 @@
+import { PiGenderFemaleBold, PiGenderMaleBold } from "react-icons/pi";
 import styled from "styled-components";
 
 export const ContentsContainer = styled.div`
@@ -31,7 +32,6 @@ export const PhotoBox = styled.img`
   width: 80%;
   height: 400px;
 
-  border: 3px solid black;
   border-radius: 20px;
 
   object-fit: fill;
@@ -40,6 +40,21 @@ export const PhotoBox = styled.img`
 export const NameBox = styled.div`
   color: black;
   font-size: 1.2rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const Female = styled(PiGenderFemaleBold)`
+  margin-bottom: 10px;
+  color: #ffa9a9;
+`;
+
+export const Male = styled(PiGenderMaleBold)`
+  margin-bottom: 5px;
+  margin-left: 3px;
+  color: #55bffb;
 `;
 
 export const InfoWrapper = styled.div`
@@ -79,6 +94,23 @@ export const DetailCotainer = styled.div`
 export const DetailBox = styled.div`
   width: 80%;
 
-  font-size: 1rem;
-  line-height: 0.3;
+  color: #2b2b2b;
+  font-size: 1.3rem;
+  line-height: 1.1;
+
+  margin: 20px 0;
+
+  p {
+    margin: 0;
+  }
+`;
+
+export const YoutubeUrl = styled.a`
+  width: auto;
+  height: 100px;
+
+  position: relative;
+  bottom: -30px;
+
+  color: #b38383;
 `;
