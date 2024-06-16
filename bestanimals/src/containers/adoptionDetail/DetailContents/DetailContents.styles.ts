@@ -15,7 +15,7 @@ export const InfoContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: aliceblue;
+  background-color: white;
 `;
 
 export const PhotoNameWrapper = styled.div`
@@ -73,12 +73,12 @@ export const DetailCotainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: green;
+  background-color: white;
 `;
 
 export const DetailBox = styled.div`
   width: 80%;
 
-  font-size: 1.2rem;
-  line-height: 1.1;
+  font-size: 1rem;
+  line-height: 0.3;
 `;

@@ -46,7 +46,7 @@ export const SimpleBannerContainer = styled.article`
   max-width: 1440px;
   border-radius: 20px 20px 0 0;
   margin: 0 auto;
-  background-color: #f8f0e3;
+  background-color: white;
   /* background: rgba(238, 216, 188, 0.8); */
 `;
 
@@ -60,7 +60,7 @@ export const FirstSimpleBanner = styled.div<{
   top: 5%;
   width: 650px;
   height: 450px;
-  background-color: #ceaf9c;
+  background-color: #c5cfee;
   z-index: 3;
   ${(props) =>
     props.$scrollY >= (2500 - props.$standardHeight) / 4 &&
@@ -110,7 +110,7 @@ export const ThirdSimpleBanner = styled.div<{
   bottom: 5%;
   width: 650px;
   height: 450px;
-  background-color: #eaeec5;
+  background-color: #c0dfc1;
   z-index: 1;
   ${(props) =>
     props.$scrollY >= ((2500 - props.$standardHeight) * 3) / 4 &&

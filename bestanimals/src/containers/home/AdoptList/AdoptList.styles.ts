@@ -13,7 +13,7 @@ export const AdoptListContainer = styled.article`
 export const CustomSlider = styled(Slider)`
   padding: 0 2rem;
   height: 100%;
-  background-color: #ece1cb;
+  background-color: #c5a999;
   border-radius: 20px;
 `;
 
@@ -44,7 +44,6 @@ export const AdoptListWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 500px;
-  background-color: #ece1cb;
 `;
 
 export const AdoptLi = styled.div<{ color: string }>`

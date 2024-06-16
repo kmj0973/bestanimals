@@ -6,6 +6,7 @@ import Header from "./_common/Header";
 import Footer from "./_common/Footer";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import Loading from "./Loading";
 
 export const metadata: Metadata = {
   title: "Best Animals",
