@@ -9,6 +9,17 @@ export const AdoptionListContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   overflow: auto;
   align-content: start;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c5a999;
+    border-radius: 6px;
+  }
 `;
 
 export const AdoptListWrapper = styled.div`

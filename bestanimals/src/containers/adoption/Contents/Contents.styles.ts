@@ -5,11 +5,14 @@ const btnStyle = css`
   width: auto;
   height: 50px;
   font-size: 1.2rem;
-  margin-right: 20px;
-  padding: 10px;
+  font-weight: 600;
 
-  border: 2px solid black;
+  margin-right: 20px;
+  padding: 0 10px;
+
+  border: 2px solid #c5a999;
   border-radius: 10px;
+  color: #c5a999;
 
   text-align: center;
 `;
