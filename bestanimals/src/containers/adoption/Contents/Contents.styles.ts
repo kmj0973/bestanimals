@@ -12,7 +12,7 @@ const btnStyle = css`
 
   border: 2px solid #c5a999;
   border-radius: 10px;
-  color: #c5a999;
+  color: #724000;
 
   text-align: center;
 `;

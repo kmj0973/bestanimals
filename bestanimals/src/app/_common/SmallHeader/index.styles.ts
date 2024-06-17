@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const Header = styled.div`
   width: 100%;
   height: 70px;
-  margin: 1px 0px;
+  margin: 0;
 
   display: flex;
   justify-content: center;
@@ -15,4 +15,6 @@ export const Header = styled.div`
   color: white;
   font-size: 1.5rem;
   font-weight: 600;
+
+  border-bottom: 3px solid #724000;
 `;

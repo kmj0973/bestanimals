@@ -5,18 +5,23 @@ import styled from "styled-components";
 export const FooterContainer = styled.div`
   width: 100%;
   height: 150px;
-  background-color: #fff3e3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 3px solid #724000;
 `;
 
 export const Content = styled.div`
-  width: 100%;
+  width: 50%;
   height: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #724000;
 `;

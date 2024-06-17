@@ -40,10 +40,22 @@ const DetailContents = (props: {
           </S.YoutubeUrl>
         </S.InfoWrapper>
       </S.InfoContainer>
+      <S.Line></S.Line>
       <S.DetailCotainer>
         <S.DetailBox
           dangerouslySetInnerHTML={{ __html: props.infoData.INTRCN_CN }}
         />
+        <S.GuideBox>
+          <S.GuideContent>
+            서울동물복지지원센터내의 입양대기동물들은 입양 전 교육 이수 후
+            첫만남이 가능합니다. 나이는 추정나이로써 실제 나이와 일치하지 않을
+            수 있으며, 성격 또한 입양 후 생활패턴이나 환경, 시간 등 변화에 따라
+            달라질 수 있으니 충분히 고려해보신 후 입양신청 해주세요.
+          </S.GuideContent>
+          <S.GuideButton href="/procedure">
+            입양 절차 안내 바로가기
+          </S.GuideButton>
+        </S.GuideBox>
       </S.DetailCotainer>
     </S.ContentsContainer>
   );

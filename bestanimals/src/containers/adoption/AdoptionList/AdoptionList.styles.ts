@@ -17,7 +17,7 @@ export const AdoptionListContainer = styled.div`
     background: rgba(0, 0, 0, 0);
   }
   &::-webkit-scrollbar-thumb {
-    background: #c5a999;
+    background: #724000;
     border-radius: 6px;
   }
 `;

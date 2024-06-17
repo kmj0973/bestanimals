@@ -8,6 +8,8 @@ export const HeaderContainer = styled.div`
   background-color: white;
   width: 100%;
   height: 80px;
+
+  border-bottom: 3px solid #724000;
 `;
 
 export const HeaderWrap = styled.div`

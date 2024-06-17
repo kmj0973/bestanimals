@@ -6,7 +6,7 @@ import Header from "./_common/Header";
 import Footer from "./_common/Footer";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import Loading from "./Loading";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Best Animals",
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <Providers>
             <StyledComponentsRegistry>
               <Header />
