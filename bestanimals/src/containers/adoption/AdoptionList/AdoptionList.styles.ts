@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PiGenderFemaleBold, PiGenderMaleBold } from "react-icons/pi";
 import styled from "styled-components";
 
@@ -41,9 +42,9 @@ export const AdoptLi = styled.div<{ color: string }>`
   background-color: white;
 `;
 
-export const AdoptLiPhoto = styled.img`
-  width: 100%;
-  height: 300px;
+export const AdoptLiPhoto = styled(Image)`
+  width: 100% !important;
+  height: 300px !important;
   min-height: 300px;
   border-radius: 38px 38px 0 0;
   object-fit: cover;

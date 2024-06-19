@@ -46,6 +46,8 @@ const AdoptionList = (props: {
                         key={info.ANIMAL_NO}
                         src={`https://` + photo.PHOTO_URL}
                         alt="animal_photo_image"
+                        width={500}
+                        height={500}
                       />
                     );
                 })}

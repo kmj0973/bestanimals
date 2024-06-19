@@ -54,7 +54,7 @@ const SimpleBanner = () => {
             밝고<br></br>행복한 모습을<br></br>보여주세요!
           </S.MainText>
           <S.SubText>
-            <Link href="/posts">입양 후기 바로가기</Link>
+            <Link href="/adoption">입양 후기 바로가기</Link>
           </S.SubText>
         </S.TextWrapper>
       </S.ThirdSimpleBanner>

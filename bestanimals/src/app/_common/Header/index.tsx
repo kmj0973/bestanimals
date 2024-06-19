@@ -36,7 +36,7 @@ const Header = () => {
                         : href == pathName
                     )
                       ? "#724000"
-                      : "#D3D3D3"
+                      : "black"
                   }
                 >
                   {(

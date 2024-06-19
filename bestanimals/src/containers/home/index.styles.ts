@@ -19,6 +19,8 @@ export const MainBlurImage = styled(Image)`
   position: absolute;
   z-index: -1;
   filter: blur(20px);
+
+  object-fit: cover;
 `;
 
 export const MainBannerImage = styled(Image)`

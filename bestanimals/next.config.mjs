@@ -5,6 +5,10 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  productionBrowserSourceMaps: true,
+  images: {
+    domains: ["animal.seoul.go.kr"],
+  },
 };
 
 export default nextConfig;
