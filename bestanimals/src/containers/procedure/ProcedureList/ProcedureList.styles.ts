@@ -1,6 +1,16 @@
 "use client";
 
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import styled, { css, keyframes } from "styled-components";
+
+const updown = keyframes`
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(20px);
+  }
+`;
 
 const appear = keyframes`
   0% {
@@ -263,4 +273,11 @@ export const LeftSmallDot = styled.div`
   left: -40px;
 
   border-radius: 50%;
+`;
+
+export const ArrowIcon = styled(MdKeyboardDoubleArrowDown)`
+  width: 100%;
+  height: 100%;
+
+  animation: ${updown} infinite 1s ease-out alternate;
 `;

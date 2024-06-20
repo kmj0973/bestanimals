@@ -49,9 +49,9 @@ const Header = () => {
               );
             })}
           </S.MenuContainer>
-          <S.UserLoginContainer>
+          {/* <S.UserLoginContainer>
             <S.UserLogin>로그인</S.UserLogin>
-          </S.UserLoginContainer>
+          </S.UserLoginContainer> */}
         </S.HeaderWrap>
       </S.HeaderContainer>
     </header>

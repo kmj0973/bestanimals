@@ -14,7 +14,7 @@ export const HeaderContainer = styled.div`
 
 export const HeaderWrap = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   max-width: 1440px;
   height: 100%;

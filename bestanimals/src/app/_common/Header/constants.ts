@@ -11,8 +11,4 @@ export const ROUTES = [
     href: "/adoption",
     title: "유기동물 입양",
   },
-  {
-    href: "/posts",
-    title: "입양 후기",
-  },
 ];
