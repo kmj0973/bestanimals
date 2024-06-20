@@ -48,6 +48,7 @@ const AdoptionList = (props: {
                         alt="animal_photo_image"
                         width={500}
                         height={500}
+                        priority
                       />
                     );
                 })}

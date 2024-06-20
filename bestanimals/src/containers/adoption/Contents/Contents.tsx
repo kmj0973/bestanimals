@@ -8,7 +8,6 @@ import Loading from "@/app/_common/Loading";
 
 const Contents = () => {
   const AdoptionList = dynamic(() => import("../AdoptionList/AdoptionList"), {
-    ssr: false,
     loading: () => <Loading />,
   });
 

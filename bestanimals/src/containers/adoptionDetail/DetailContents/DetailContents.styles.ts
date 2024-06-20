@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PiGenderFemaleBold, PiGenderMaleBold } from "react-icons/pi";
 import styled from "styled-components";
 
@@ -29,8 +30,8 @@ export const PhotoNameWrapper = styled.div`
   align-items: center;
 `;
 export const PhotoBox = styled.img`
-  width: 80%;
-  height: 400px;
+  width: 80% !important;
+  height: 400px !important;
 
   border-radius: 20px;
 

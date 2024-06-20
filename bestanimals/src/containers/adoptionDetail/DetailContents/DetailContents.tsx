@@ -1,23 +1,27 @@
-import { resultProps } from "@/types/home.types";
-import * as S from "./DetailContents.styles";
+"use client";
 
-const DetailContents = (props: {
-  infoData: resultProps;
-  photoData: resultProps;
-}) => {
-  console.log(props.infoData.INTRCN_MVP_URL);
+import * as S from "./DetailContents.styles";
+import { useParams } from "next/navigation";
+import { useSingleInfoData, useSinglePhotoData } from "../index.hooks";
+
+const DetailContents = () => {
+  const router = useParams();
+
+  const info = useSingleInfoData(+router.animalID);
+  const photo = useSinglePhotoData(+router.animalID);
+
   return (
     <S.ContentsContainer>
       <S.InfoContainer>
         <S.PhotoNameWrapper>
           <S.PhotoBox
-            key={props.infoData.ANIMAL_NO}
-            src={`https://` + props.photoData.PHOTO_URL}
+            key={info.infoData.ANIMAL_NO}
+            src={`https://` + photo.photoData.PHOTO_URL}
             alt="animal_photo_image"
           />
           <S.NameBox>
-            <div>{props.infoData.NM}</div>
-            {props.infoData.SEXDSTN == "M" ? (
+            <div>{info.infoData.NM}</div>
+            {info.infoData.SEXDSTN == "M" ? (
               <S.Male size="30px" />
             ) : (
               <S.Female size="30px" />
@@ -27,23 +31,23 @@ const DetailContents = (props: {
         <S.InfoWrapper>
           <S.InfoBox>
             입소날짜 :
-            {props.infoData.ENTRNC_DATE
-              ? props.infoData.ENTRNC_DATE.split("-").join(".")
-              : props.infoData.ENTRNC_DATE}
+            {info.infoData.ENTRNC_DATE
+              ? info.infoData.ENTRNC_DATE.split("-").join(".")
+              : info.infoData.ENTRNC_DATE}
           </S.InfoBox>
-          <S.InfoBox>품종 : {props.infoData.BREEDS}</S.InfoBox>
-          <S.InfoBox>무게 : {props.infoData.BDWGH}kg</S.InfoBox>
-          <S.InfoBox>나이 : {props.infoData.AGE}</S.InfoBox>
+          <S.InfoBox>품종 : {info.infoData.BREEDS}</S.InfoBox>
+          <S.InfoBox>무게 : {info.infoData.BDWGH}kg</S.InfoBox>
+          <S.InfoBox>나이 : {info.infoData.AGE}</S.InfoBox>
           <S.UnderLine></S.UnderLine>
-          <S.YoutubeUrl href={props.infoData.INTRCN_MVP_URL}>
-            {props.infoData.NM} 소개 영상
+          <S.YoutubeUrl href={info.infoData.INTRCN_MVP_URL}>
+            {info.infoData.NM} 소개 영상
           </S.YoutubeUrl>
         </S.InfoWrapper>
       </S.InfoContainer>
       <S.Line></S.Line>
       <S.DetailCotainer>
         <S.DetailBox
-          dangerouslySetInnerHTML={{ __html: props.infoData.INTRCN_CN }}
+          dangerouslySetInnerHTML={{ __html: info.infoData.INTRCN_CN }}
         />
         <S.GuideBox>
           <S.GuideContent>
