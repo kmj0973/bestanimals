@@ -8,6 +8,8 @@ import { resultProps } from "@/types/home.types";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useInfoData, usePhotoData } from "@/containers/adoption/index.hooks";
+import Loading from "@/app/_common/Loading";
 
 const sliderSettings = {
   dots: true,
@@ -27,10 +29,10 @@ const sliderSettings = {
   ),
 };
 
-const AdoptList = (props: {
-  resultInfoData: Array<resultProps>;
-  duplicatePhotoData: Array<resultProps>;
-}) => {
+const AdoptList = () => {
+  const { infoData, isLoading } = useInfoData();
+  const { photoData } = usePhotoData();
+
   const pathName = usePathname();
 
   const [isHover, setIsHover] = useState<string | undefined>("0");
@@ -43,10 +45,17 @@ const AdoptList = (props: {
     if (isHover !== "0") setIsHover("0");
   };
 
+  if (isLoading) {
+    return (
+      <>
+        <Loading />
+      </>
+    );
+  }
   return (
     <S.AdoptListContainer>
       <S.CustomSlider {...sliderSettings}>
-        {props.resultInfoData.map((info: resultProps, i: number) => {
+        {infoData.map((info: resultProps, i: number) => {
           if (i > 9) return;
           return (
             <S.AdoptListWrapper key={info.ANIMAL_NO}>
@@ -56,7 +65,7 @@ const AdoptList = (props: {
                 onMouseOver={onHover}
                 onMouseLeave={onLeave}
               >
-                {props.duplicatePhotoData.map((photo: resultProps) => {
+                {photoData.map((photo: resultProps) => {
                   if (photo.ANIMAL_NO == info.ANIMAL_NO)
                     return (
                       <S.AdoptLiPhoto

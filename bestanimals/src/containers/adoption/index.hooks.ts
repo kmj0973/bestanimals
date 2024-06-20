@@ -2,12 +2,12 @@ import { getAnimalInfoData, getAnimalPhotoData } from "@/service/adoption";
 import { useQuery } from "@tanstack/react-query";
 
 export const useInfoData = () => {
-  const { data = [] } = useQuery({
+  const { data = [], isLoading } = useQuery({
     queryKey: ["InfoData"],
     queryFn: getAnimalInfoData,
   });
 
-  return { infoData: data };
+  return { infoData: data, isLoading };
 };
 
 export const usePhotoData = () => {

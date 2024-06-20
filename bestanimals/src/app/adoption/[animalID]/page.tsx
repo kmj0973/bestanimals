@@ -1,5 +1,3 @@
-"use client";
-
 import AdoptionDetail from "@/containers/adoptionDetail";
 
 const AdoptionDetailPage = () => {
