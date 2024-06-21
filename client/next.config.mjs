@@ -7,8 +7,12 @@ const nextConfig = {
   },
   productionBrowserSourceMaps: true,
   images: {
-    domains: ["animal.seoul.go.kr"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "animal.seoul.go.kr",
+      },
+    ],
   },
 };
-
 export default nextConfig;

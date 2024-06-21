@@ -3,8 +3,8 @@
 import { usePathname } from "next/navigation";
 import { ROUTES } from "./constants";
 import * as S from "./index.styles";
-import header_logo from "../../../../public/images/header/header_logo.png";
-import header_nav_accent from "../../../../public/images/header/header_nav_accent.png";
+import header_logo from "../../../public/images/header/header_logo.png";
+import header_nav_accent from "../../../public/images/header/header_nav_accent.png";
 import Link from "next/link";
 import { MouseEventHandler } from "react";
 

@@ -2,8 +2,8 @@ import { Suspense } from "react";
 
 import StyledComponentsRegistry from "./lib/registry";
 import Providers from "./Providers";
-import Header from "./_common/Header";
-import Footer from "./_common/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Loading from "./loading";

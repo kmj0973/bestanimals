@@ -1,6 +1,6 @@
 import Contents from "./Contents/Contents";
 import * as S from "./index.styles";
-import SmallHeader from "@/app/_common/SmallHeader";
+import SmallHeader from "@/components/SmallHeader";
 
 const Adoption = () => {
   return (

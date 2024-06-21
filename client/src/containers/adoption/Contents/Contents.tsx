@@ -4,7 +4,7 @@ import { useState } from "react";
 import * as S from "./Contents.styles";
 import { useInfoData, usePhotoData } from "../index.hooks";
 import dynamic from "next/dynamic";
-import Loading from "@/app/_common/Loading";
+import Loading from "@/components/Loading";
 
 const Contents = () => {
   const AdoptionList = dynamic(() => import("../AdoptionList/AdoptionList"), {

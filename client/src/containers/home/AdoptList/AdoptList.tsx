@@ -9,7 +9,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useInfoData, usePhotoData } from "@/containers/adoption/index.hooks";
-import Loading from "@/app/_common/Loading";
+import Loading from "@/components/Loading";
 
 const sliderSettings = {
   dots: true,

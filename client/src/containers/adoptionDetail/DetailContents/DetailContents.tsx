@@ -3,7 +3,7 @@
 import * as S from "./DetailContents.styles";
 import { useParams } from "next/navigation";
 import { useSingleInfoData, useSinglePhotoData } from "../index.hooks";
-import Loading from "@/app/_common/Loading";
+import Loading from "@/components/Loading";
 
 const DetailContents = () => {
   const router = useParams();
