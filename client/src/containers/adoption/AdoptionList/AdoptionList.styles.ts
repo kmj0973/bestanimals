@@ -27,6 +27,7 @@ export const AdoptListWrapper = styled.div`
   display: flex !important;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 500px;
   margin: 0 auto;
 `;

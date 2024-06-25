@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs", // 또는 "ESNext"
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "moduleResolution": "node"
+    "target": "ES2020",               // 컴파일된 JavaScript 코드가 ES2020 규격을 따르도록 설정합니다.
+    "module": "commonjs",             // 모듈 시스템으로 CommonJS를 사용합니다. 이는 Node.js에서 주로 사용됩니다.
+    "outDir": "./dist",               // 컴파일된 JavaScript 파일을 저장할 디렉토리를 지정합니다.
+    "rootDir": "./src",               // TypeScript 소스 파일이 있는 루트 디렉토리를 지정합니다.
+    "strict": true,                   // 엄격한 타입 검사 옵션을 활성화합니다.
+    "esModuleInterop": true,          // CommonJS와 ES 모듈 간의 호환성을 허용합니다.
+    "skipLibCheck": true              // 라이브러리 파일의 타입 검사를 건너뜁니다. 컴파일 속도를 향상시킬 수 있습니다.
   },
-  "include": ["./**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"],            // 컴파일 대상 파일을 지정합니다. 여기서는 src 폴더의 모든 파일을 포함합니다.
+  "exclude": ["node_modules"]         // 컴파일에서 제외할 파일이나 폴더를 지정합니다.
 }
