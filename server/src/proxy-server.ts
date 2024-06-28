@@ -19,10 +19,15 @@ const apiProxyOptions = {
 const apiProxy = createProxyMiddleware(apiProxyOptions);
 
 app.use("/api", apiProxy);
+console.log(__dirname);
 
 const httpsOptions = {
   key: fs.readFileSync(path.resolve(__dirname, "../server.key")), // SSL 키 파일 경로
   cert: fs.readFileSync(path.resolve(__dirname, "../server.crt")), // SSL 인증서 파일 경로
 };
 
-console.log(__dirname);
+https.createServer(httpsOptions, app).listen(process.env.PROXY_PORT, () => {
+  console.log(
+    `HTTPS Proxy server is running on https://localhost:${process.env.PROXY_PORT}`
+  );
+});
