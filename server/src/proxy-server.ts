@@ -3,10 +3,13 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 import https from "https";
 import path from "path";
 import fs from "fs";
+import cors from "cors";
 import "dotenv/config";
 
 const app = express();
-const proxy_port = process.env.PROXY_PORT || 3002;
+const PROXY_PORT = process.env.PROXY_PORT || 3002;
+
+app.use(cors());
 
 const apiProxyOptions = {
   target: process.env.INFO_TARGET_URL,
@@ -14,20 +17,20 @@ const apiProxyOptions = {
   pathRewrite: {
     "/api": "",
   },
+  secure: false, // 인증 기관에서 발급한 인증서이므로 secure를 true로 설정
 };
 
 const apiProxy = createProxyMiddleware(apiProxyOptions);
 
 app.use("/api", apiProxy);
-console.log(__dirname);
 
 const httpsOptions = {
   key: fs.readFileSync(path.resolve(__dirname, "../server.key")), // SSL 키 파일 경로
   cert: fs.readFileSync(path.resolve(__dirname, "../server.crt")), // SSL 인증서 파일 경로
 };
 
-https.createServer(httpsOptions, app).listen(process.env.PROXY_PORT, () => {
+https.createServer(httpsOptions, app).listen(PROXY_PORT, () => {
   console.log(
-    `HTTPS Proxy server is running on https://localhost:${process.env.PROXY_PORT}`
+    `HTTPS Proxy server is running on https://localhost:${PROXY_PORT}`
   );
 });
