@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/next.config.js",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "server/src/proxy-server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [{ "src": "/api/(.*)", "dest": "/server/src/proxy-server.ts" }]
+}
