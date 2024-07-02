@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon --watch src --exec npx ts-node src/proxy-server.ts",
     "build": "tsc",
-    "start": "npm run build && node ./dist/index.js"
+    "start": "npm run build && node ./dist/proxy-server.js"
   },
   "keywords": [],
   "author": "",

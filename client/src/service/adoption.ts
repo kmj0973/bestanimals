@@ -4,7 +4,13 @@ import axios from "axios";
 export const getAnimalInfoData = async () => {
   try {
     const data = await axios(
-      "https://localhost:3002/api/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/50/"
+      "https://localhost:3002/api/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/50/",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     ).then((res) => res.data.TbAdpWaitAnimalView.row);
 
     return data;
@@ -16,7 +22,13 @@ export const getAnimalInfoData = async () => {
 export const getAnimalPhotoData = async () => {
   try {
     const data = await axios(
-      "https://localhost:3002/api/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/1000/"
+      "https://localhost:3002/api/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/1000/",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     ).then((res) =>
       res.data.TbAdpWaitAnimalPhotoView.row.reduce(
         (prev: Array<resultProps>, now: resultProps) => {

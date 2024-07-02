@@ -17,7 +17,7 @@ const apiProxyOptions = {
   pathRewrite: {
     "/api": "",
   },
-  secure: false, // 인증 기관에서 발급한 인증서이므로 secure를 true로 설정
+  secure: false,
 };
 
 const apiProxy = createProxyMiddleware(apiProxyOptions);
