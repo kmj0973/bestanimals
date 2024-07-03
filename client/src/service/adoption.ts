@@ -49,7 +49,7 @@ export const getAnimalPhotoData = async () => {
 
 export const getSingleAnimalInfoData = async (animalID: number) => {
   const data = await axios(
-    "https://localhost:3002/api/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/50/"
+    "/api/797845717872687236334e636f594d/json/TbAdpWaitAnimalView/1/50/"
   )
     .then((res) => res.data.TbAdpWaitAnimalView.row)
     .then((arr) => arr.find((info: resultProps) => info.ANIMAL_NO == animalID));
@@ -59,7 +59,7 @@ export const getSingleAnimalInfoData = async (animalID: number) => {
 
 export const getSingleAnimalPhotoData = async (animalID: number) => {
   const data = await axios(
-    "https://localhost:3002/api/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/1000/"
+    "/api/764d76474f7268723131366c4f63756e/json/TbAdpWaitAnimalPhotoView/1/1000/"
   )
     .then((res) =>
       res.data.TbAdpWaitAnimalPhotoView.row.reduce(
