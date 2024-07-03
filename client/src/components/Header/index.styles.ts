@@ -14,7 +14,7 @@ export const HeaderContainer = styled.div`
 
 export const HeaderWrap = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   max-width: 1440px;
   height: 100%;
@@ -33,7 +33,7 @@ export const LogoImage = styled(Image)`
 
 export const MenuContainer = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 30%;
   min-width: 500px;
