@@ -1,9 +1,17 @@
 "use client";
 
 import * as S from "./index.styles";
-import DetailContents from "./DetailContents/DetailContents";
+import dynamic from "next/dynamic";
+import Loading from "@/components/Loading";
 
 const AdoptionDetail = () => {
+  const DetailContents = dynamic(
+    () => import("./DetailContents/DetailContents"),
+    {
+      loading: () => <Loading />,
+    }
+  );
+
   return (
     <S.AdoptionDetailContainer>
       <DetailContents />
