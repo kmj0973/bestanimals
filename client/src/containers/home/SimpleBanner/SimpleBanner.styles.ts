@@ -153,7 +153,7 @@ export const SubText = styled.p`
   & > a {
     color: white;
     &:hover {
-      color: #724000;
+      color: ${({ theme }) => theme.colors.accent};
     }
   }
 `;

@@ -191,7 +191,7 @@ export const Content = styled.div`
   a {
     margin-top: 10px;
     font-size: 1.1rem;
-    color: #724000;
+    color: ${({ theme }) => theme.colors.accent};
   }
   a:hover {
     color: brown;

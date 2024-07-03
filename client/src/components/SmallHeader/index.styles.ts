@@ -11,10 +11,10 @@ export const Header = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: #c5a999;
+  background-color: ${({ theme }) => theme.colors.main};
   color: white;
   font-size: 1.5rem;
   font-weight: 600;
 
-  border-bottom: 3px solid #724000;
+  border-bottom: 3px solid ${({ theme }) => theme.colors.main};
 `;

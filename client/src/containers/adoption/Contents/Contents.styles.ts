@@ -10,9 +10,9 @@ const btnStyle = css`
   margin-right: 20px;
   padding: 0 10px;
 
-  border: 2px solid #c5a999;
+  border: 2px solid ${({ theme }) => theme.colors.main};
   border-radius: 10px;
-  color: #724000;
+  color: ${({ theme }) => theme.colors.accent};
 
   text-align: center;
 `;

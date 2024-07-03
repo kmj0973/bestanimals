@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 80px;
 
-  border-bottom: 3px solid #724000;
+  border-bottom: 3px solid ${({ theme }) => theme.colors.accent};
 `;
 
 export const HeaderWrap = styled.div`

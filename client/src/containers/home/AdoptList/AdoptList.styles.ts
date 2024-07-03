@@ -18,24 +18,24 @@ export const CustomSlider = styled(Slider)`
 `;
 
 export const CustomSliderPrevArrow = styled(IoIosArrowBack)`
-  color: #724000;
+  color: ${({ theme }) => theme.colors.accent};
   position: relative;
   left: 1.3rem;
   bottom: 1rem;
 
   &:hover {
-    color: #724000;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
 export const CustomSliderNextArrow = styled(IoIosArrowForward)`
-  color: #724000;
+  color: ${({ theme }) => theme.colors.accent};
   position: relative;
   right: 3rem;
   bottom: 1rem;
 
   &:hover {
-    color: #724000;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 

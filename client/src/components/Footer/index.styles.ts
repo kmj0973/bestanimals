@@ -10,7 +10,7 @@ export const FooterContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  border-top: 3px solid #724000;
+  border-top: 3px solid ${({ theme }) => theme.colors.accent};
 `;
 
 export const Content = styled.div`
@@ -23,5 +23,5 @@ export const Content = styled.div`
 
   font-size: 1.3rem;
   font-weight: bold;
-  color: #724000;
+  color: ${({ theme }) => theme.colors.accent};
 `;
