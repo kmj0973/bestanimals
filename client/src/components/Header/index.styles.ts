@@ -33,9 +33,9 @@ export const LogoImage = styled(Image)`
 
 export const MenuContainer = styled.ul`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 30%;
+  width: auto;
   min-width: 500px;
   padding-left: 0;
   list-style: none;
@@ -51,6 +51,7 @@ export const Menu = styled.li<{ color: string }>`
   }
   position: relative;
   padding: 0 20px;
+  margin: 0 5px;
 `;
 
 export const NavAccentImage = styled(Image)`
