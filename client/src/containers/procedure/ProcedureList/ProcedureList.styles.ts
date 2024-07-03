@@ -65,13 +65,12 @@ export const UnderArrow = styled.div<{
   max-width: 1440px;
   height: 200px;
 
-  background-color: black;
-  color: white;
-  font-size: 2rem;
-  opacity: 0.5;
-
   bottom: 0px;
   margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   div {
     height: 100%;
@@ -86,6 +85,13 @@ export const UnderArrow = styled.div<{
       animation: ${disappear} 0.5s ease-out;
       display: none;
     `}
+`;
+
+export const ArrowIcon = styled(MdKeyboardDoubleArrowDown)`
+  width: 100%;
+  height: 40%;
+
+  animation: ${updown} infinite 1s ease-out alternate;
 `;
 
 export const ContentsContainer = styled.div`
@@ -273,11 +279,4 @@ export const LeftSmallDot = styled.div`
   left: -40px;
 
   border-radius: 50%;
-`;
-
-export const ArrowIcon = styled(MdKeyboardDoubleArrowDown)`
-  width: 100%;
-  height: 100%;
-
-  animation: ${updown} infinite 1s ease-out alternate;
 `;

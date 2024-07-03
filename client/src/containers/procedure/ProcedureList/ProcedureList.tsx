@@ -188,7 +188,9 @@ const ProcedureList = () => {
         </S.ContentBox>
       </S.ContentBoxContainer>
       <S.UnderArrow $scrollY={scroll}>
-        <S.ArrowIcon></S.ArrowIcon>
+        <div>
+          <S.ArrowIcon></S.ArrowIcon>
+        </div>
       </S.UnderArrow>
     </S.ContentsContainer>
   );
