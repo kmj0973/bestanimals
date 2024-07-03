@@ -1,5 +1,6 @@
 import { Suspense } from "react";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import StyledComponentsRegistry from "./lib/registry";
 import Providers from "./Providers";
 import Header from "../components/Header";
@@ -31,6 +32,8 @@ export default function RootLayout({
             </StyledComponentsRegistry>
           </Providers>
         </Suspense>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
