@@ -14,10 +14,10 @@ export const useSingleInfoData = (animalID: number) => {
 };
 
 export const useSinglePhotoData = (animalID: number) => {
-  const { data = {} } = useQuery({
+  const { data = {}, isLoading } = useQuery({
     queryKey: ["PhotoData", animalID],
     queryFn: () => getSingleAnimalPhotoData(animalID),
   });
 
-  return { photoData: data };
+  return { photoData: data, isLoading };
 };

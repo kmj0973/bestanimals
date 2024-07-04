@@ -29,7 +29,7 @@ export const PhotoNameWrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
 `;
-export const PhotoBox = styled.img`
+export const PhotoBox = styled(Image)`
   width: 80% !important;
   height: 400px !important;
 

@@ -1,15 +1,15 @@
 "use client";
 
-import * as S from "./DetailContents.styles";
 import { useParams } from "next/navigation";
 import { useSingleInfoData, useSinglePhotoData } from "../index.hooks";
 import Loading from "@/components/Loading";
+import * as S from "./DetailContents.styles";
 
 const DetailContents = () => {
   const router = useParams();
 
-  const { infoData, isLoading } = useSingleInfoData(+router.animalID);
-  const { photoData } = useSinglePhotoData(+router.animalID);
+  const { infoData } = useSingleInfoData(+router.animalID);
+  const { photoData, isLoading } = useSinglePhotoData(+router.animalID);
 
   if (isLoading) {
     return (
@@ -19,15 +19,24 @@ const DetailContents = () => {
     );
   }
 
+  const isValidSrc = (src: string) =>
+    typeof src === "string" && src.startsWith("http");
+
   return (
     <S.ContentsContainer>
       <S.InfoContainer>
         <S.PhotoNameWrapper>
-          <S.PhotoBox
-            key={infoData.ANIMAL_NO}
-            src={`https://` + photoData.PHOTO_URL}
-            alt="animal_photo_image"
-          />
+          {isValidSrc(`https://` + photoData.PHOTO_URL) ? (
+            <S.PhotoBox
+              key={infoData.ANIMAL_NO}
+              src={`https://` + photoData.PHOTO_URL}
+              alt="animal_photo_image"
+              width={300}
+              height={300}
+            />
+          ) : (
+            <p>Loading...</p>
+          )}
           <S.NameBox>
             <div>{infoData.NM}</div>
             {infoData.SEXDSTN == "M" ? (
