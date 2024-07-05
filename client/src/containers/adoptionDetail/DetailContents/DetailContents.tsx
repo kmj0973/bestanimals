@@ -8,10 +8,10 @@ import * as S from "./DetailContents.styles";
 const DetailContents = () => {
   const router = useParams();
 
-  const { infoData } = useSingleInfoData(+router.animalID);
+  const { infoData, isLoading2 } = useSingleInfoData(+router.animalID);
   const { photoData, isLoading } = useSinglePhotoData(+router.animalID);
   //d
-  if (isLoading) {
+  if (isLoading && isLoading2) {
     return (
       <>
         <Loading />

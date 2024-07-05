@@ -10,7 +10,7 @@ export const useSingleInfoData = (animalID: number) => {
     queryFn: () => getSingleAnimalInfoData(animalID),
   });
 
-  return { infoData: data, isLoading };
+  return { infoData: data, isLoading2: isLoading };
 };
 
 export const useSinglePhotoData = (animalID: number) => {
