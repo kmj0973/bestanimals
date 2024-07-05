@@ -10,7 +10,7 @@ const DetailContents = () => {
 
   const { infoData } = useSingleInfoData(+router.animalID);
   const { photoData, isLoading } = useSinglePhotoData(+router.animalID);
-
+  //d
   if (isLoading) {
     return (
       <>
