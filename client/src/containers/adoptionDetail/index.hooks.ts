@@ -5,12 +5,21 @@ import {
 import { useQuery } from "@tanstack/react-query";
 
 export const useSingleInfoData = (animalID: number) => {
-  const { data = {}, isLoading } = useQuery({
+  const infoQuery = useQuery({
     queryKey: ["InfoData", animalID],
     queryFn: () => getSingleAnimalInfoData(animalID),
   });
 
-  return { infoData: data, isLoading2: isLoading };
+  const photoQuery = useQuery({
+    queryKey: ["PhotoData", animalID],
+    queryFn: () => getSingleAnimalPhotoData(animalID),
+  });
+
+  return {
+    infoData: infoQuery.data,
+    photoData: photoQuery.data,
+    isLoading: infoQuery.isLoading || photoQuery.isLoading,
+  };
 };
 
 export const useSinglePhotoData = (animalID: number) => {
