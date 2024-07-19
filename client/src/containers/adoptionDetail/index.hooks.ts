@@ -21,12 +21,3 @@ export const useSingleInfoData = (animalID: number) => {
     isLoading: infoQuery.isLoading || photoQuery.isLoading,
   };
 };
-
-export const useSinglePhotoData = (animalID: number) => {
-  const { data = {}, isLoading } = useQuery({
-    queryKey: ["PhotoData", animalID],
-    queryFn: () => getSingleAnimalPhotoData(animalID),
-  });
-
-  return { photoData: data, isLoading };
-};

@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useSingleInfoData, useSinglePhotoData } from "../index.hooks";
+import { useSingleInfoData } from "../index.hooks";
 import Loading from "@/components/Loading";
 import * as S from "./DetailContents.styles";
 
